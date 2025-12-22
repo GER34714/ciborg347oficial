@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <title>CIBORG 347™ | Landing Pages & Web Designs</title>
+  <meta name="description" content="CIBORG 347™ crea páginas web profesionales para emprendedores: landings que convierten visitas en clientes. Diseño moderno, responsive y pago único. Buenos Aires, Argentina." />
+
+  <!-- OG -->
+  <meta property="og:title" content="CIBORG 347™ | Páginas web que convierten" />
+  <meta property="og:description" content="Landing Pages & Web Designs. Diseño profesional, enfoque en ventas y contacto directo por WhatsApp. Pago único." />
+  <meta property="og:type" content="website" />
+  <!-- Reemplazá og:image por un link público a tu logo para previews (WhatsApp/IG) -->
+  <meta property="og:image" content="logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070A12;
+      --bg2:#0b1020;
+      --card:#0c1226cc;
+      --card2:#0c1226f0;
+      --text:#eaf1ff;
+      --muted:#b9c5df;
+      --muted2:#95a5c6;
+      --line:rgba(255,255,255,.10);
+
+      --cyan:#00e5ff;
+      --magenta:#ff3cff;
+      --violet:#b97cff;
+      --blue:#3a7cff;
+      --green:#3dffb7;
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --shadow2: 0 12px 40px rgba(0,0,0,.35);
+
+      --r: 18px;
+      --r2: 26px;
+
+      --max: 1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(0,229,255,.14), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(255,60,255,.12), transparent 60%),
+        radial-gradient(900px 700px at 40% 90%, rgba(185,124,255,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--text);
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:13px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:600;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: var(--shadow2);
+    }
+    .btn:active{transform: translateY(0px) scale(.99)}
+    .btn.primary{
+      border:none;
+      background:
+        linear-gradient(135deg, rgba(0,229,255,.95), rgba(255,60,255,.85));
+      color:#06101a;
+      box-shadow: 0 18px 55px rgba(0,229,255,.12), 0 18px 55px rgba(255,60,255,.10);
+    }
+    .btn.primary:hover{
+      box-shadow: 0 22px 70px rgba(0,229,255,.14), 0 22px 70px rgba(255,60,255,.12);
+    }
+    .btn.ghost{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.20);
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight:600;
+      cursor:pointer;
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+      user-select:none;
+    }
+    .chip:hover{background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.22); transform: translateY(-1px)}
+    .chip.active{
+      color:#06101a;
+      border:none;
+      background: linear-gradient(135deg, rgba(0,229,255,.90), rgba(255,60,255,.78));
+    }
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:12px;
+      padding: 2px 8px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+    }
+
+    .bg-grid{
+      position:fixed; inset:0;
+      pointer-events:none;
+      opacity:.22;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(600px 420px at 50% 10%, black 55%, transparent 100%);
+    }
+    .glow{
+      position:absolute;
+      width:900px; height:900px;
+      left:50%; top:-380px; transform:translateX(-50%);
+      background: radial-gradient(circle at 50% 50%,
+        rgba(0,229,255,.14), transparent 60%),
+        radial-gradient(circle at 30% 40%,
+        rgba(255,60,255,.12), transparent 55%);
+      filter: blur(12px);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    header.top{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,10,18,.80), rgba(7,10,18,.50));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width:42px; height:42px; border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 12px 30px rgba(0,229,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .brand .name b{
+      font-family: Sora, Poppins, sans-serif;
+      font-size: 14.5px;
+      letter-spacing:.6px;
+    }
+    .brand .name span{
+      font-size: 12px;
+      color: var(--muted2);
+    }
+
+    nav.menu{
+      display:flex; align-items:center; gap:14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    nav.menu a{
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 10px;
+      border-radius: 12px;
+      transition: background .15s ease, color .15s ease;
+    }
+    nav.menu a:hover{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+    }
+
+    .top-cta{
+      display:flex; align-items:center; gap:10px;
+      justify-content:flex-end;
+      min-width: 260px;
+    }
+
+    .hero{
+      position: relative;
+      padding: 64px 0 34px;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      box-shadow: 0 0 0 4px rgba(0,229,255,.10);
+    }
+    .hero h1{
+      margin: 14px 0 10px;
+      font-family: Sora, Poppins, sans-serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.06;
+      letter-spacing: -0.6px;
+    }
+    .grad{
+      background: linear-gradient(135deg, rgba(0,229,255,.95), rgba(255,60,255,.90));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 58ch;
+    }
+    .hero-actions{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin: 18px 0 14px;
+    }
+    .hero-meta{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 12px;
+      color: var(--muted2);
+      font-weight:600;
+      font-size: 13px;
+    }
+    .hero-meta span{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero-card{
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(12,18,38,.70), rgba(12,18,38,.42));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 260px at 20% 10%, rgba(0,229,255,.16), transparent 65%),
+                  radial-gradient(600px 260px at 80% 30%, rgba(255,60,255,.14), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-card .inner{
+      position: relative;
+      padding: 18px 18px 16px;
+    }
+    .hero-card .logo-big{
+      width:100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height: 250px;
+    }
+    .hero-card .logo-big img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .hero-card .mini{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .mini .stat{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 12px 12px;
+    }
+    .mini .stat b{
+      display:block;
+      font-family:Sora, Poppins, sans-serif;
+      letter-spacing:.2px;
+      margin-bottom:6px;
+      font-size: 14px;
+    }
+    .mini .stat span{
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height: 1.4;
+    }
+
+    section{
+      padding: 52px 0;
+      position: relative;
+    }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-family:Sora, Poppins, sans-serif;
+      font-size: 26px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.6;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(12,18,38,.62), rgba(12,18,38,.36));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .card .pad{padding: 18px 18px}
+    .card h3{
+      margin: 0 0 8px;
+      font-family:Sora, Poppins, sans-serif;
+      letter-spacing:-.2px;
+      font-size: 16px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .icon{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      margin-bottom: 10px;
+      position: relative;
+      overflow:hidden;
+    }
+    .icon::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(70px 50px at 20% 20%, rgba(0,229,255,.25), transparent 60%),
+                  radial-gradient(70px 50px at 80% 50%, rgba(255,60,255,.20), transparent 60%);
+      pointer-events:none;
+    }
+    .icon svg{position:relative; opacity:.95}
+
+    .portfolio-tools{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin: 10px 0 14px;
+    }
+    .chips{
+      display:flex; gap:10px;
+      flex-wrap:wrap;
+    }
+    .search{
+      display:flex; gap:10px; align-items:center;
+      flex: 1;
+      max-width: 380px;
+      justify-content:flex-end;
+    }
+    .search input{
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .search input:focus{
+      border-color: rgba(0,229,255,.45);
+      background: rgba(255,255,255,.06);
+    }
+
+    .work-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .work{
+      border-radius: 20px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(12,18,38,.50);
+      box-shadow: var(--shadow2);
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      position: relative;
+    }
+    .work:hover{
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.20);
+      background: rgba(12,18,38,.62);
+    }
+    .work .thumb{
+      aspect-ratio: 4 / 3;
+      width:100%;
+      background: rgba(255,255,255,.03);
+      display:block;
+      overflow:hidden;
+    }
+    .work img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .work .meta{
+      padding: 12px 12px 12px;
+    }
+    .work .topline{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .tag{
+      font-size: 11px;
+      color: #06101a;
+      font-weight: 800;
+      letter-spacing:.4px;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(0,229,255,.95), rgba(255,60,255,.85));
+    }
+    .work .title{
+      font-weight: 800;
+      letter-spacing:.2px;
+      font-size: 13px;
+      color: var(--text);
+      margin: 2px 0 6px;
+      font-family:Sora, Poppins, sans-serif;
+    }
+    .work .short{
+      color: var(--muted);
+      font-size: 12.6px;
+      line-height: 1.45;
+      min-height: 36px;
+    }
+
+    .portfolio-footer{
+      display:flex;
+      justify-content:center;
+      margin-top: 18px;
+    }
+
+    .price{
+      position: relative;
+      overflow:hidden;
+    }
+    .price .ribbon{
+      position:absolute;
+      top: 14px; right:-40px;
+      transform: rotate(35deg);
+      background: linear-gradient(135deg, rgba(0,229,255,.95), rgba(255,60,255,.85));
+      color:#06101a;
+      padding: 8px 60px;
+      font-weight: 900;
+      font-size: 11px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+    }
+    .price .list{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .price .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+    .check{
+      width: 18px; height: 18px; flex:0 0 18px;
+      border-radius: 999px;
+      background: rgba(61,255,183,.18);
+      border: 1px solid rgba(61,255,183,.30);
+      display:flex; align-items:center; justify-content:center;
+      margin-top: 1px;
+    }
+    .check svg{opacity:.95}
+
+    .story{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .quote{
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .quote b{color: var(--text)}
+    .callout{
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(12,18,38,.62), rgba(12,18,38,.36));
+      box-shadow: var(--shadow2);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .callout::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 260px at 15% 10%, rgba(0,229,255,.14), transparent 65%),
+                  radial-gradient(420px 260px at 90% 40%, rgba(255,60,255,.12), transparent 65%);
+      pointer-events:none;
+    }
+    .callout .inner{position:relative}
+    .callout .row{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .form{
+      padding: 18px;
+    }
+    .form .fields{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .form .fields .full{grid-column: 1 / -1;}
+    label{
+      display:block;
+      font-weight:700;
+      font-size: 12px;
+      color: var(--muted2);
+      margin-bottom: 6px;
+      letter-spacing:.2px;
+      text-transform: uppercase;
+    }
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, background .15s ease;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    textarea{min-height: 110px; resize: vertical;}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(0,229,255,.45);
+      background: rgba(255,255,255,.06);
+    }
+    .helper{
+      margin-top: 10px;
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    footer{
+      padding: 28px 0 44px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,10,18,.55);
+      backdrop-filter: blur(8px);
+    }
+    .footer-grid{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .fine{
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+    .links{
+      display:flex; gap:12px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .links a{
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .links a:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 80;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .wa-pill{
+      display:none;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(12,18,38,.75);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--text);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+      font-weight: 800;
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .wa-btn{
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(61,255,183,.95), rgba(0,229,255,.70));
+      box-shadow: 0 16px 55px rgba(61,255,183,.12), 0 16px 55px rgba(0,229,255,.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .wa-btn:hover{transform: translateY(-2px); box-shadow: 0 22px 70px rgba(61,255,183,.14), 0 22px 70px rgba(0,229,255,.12);}
+    .wa-btn svg{filter: drop-shadow(0 10px 20px rgba(0,0,0,.25));}
+
+    .modal{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.62);
+      backdrop-filter: blur(10px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 90;
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      width:min(980px, 100%);
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(12,18,38,.86), rgba(12,18,38,.66));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .modal-card .bar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px;
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .modal-card .bar .left{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .modal-card .bar .title{
+      font-family:Sora, Poppins, sans-serif;
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 14px;
+    }
+    .modal-card .content{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 0;
+    }
+    .modal-card .preview{
+      background: rgba(255,255,255,.03);
+      border-right: 1px solid rgba(255,255,255,.10);
+      min-height: 360px;
+    }
+    .modal-card .preview img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .modal-card .side{
+      padding: 16px 16px;
+    }
+    .modal-card .side p{
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 10px 0 0;
+      font-size: 14px;
+    }
+    .modal-card .side .actions{
+      display:flex; flex-direction:column; gap:10px;
+      margin-top: 14px;
+    }
+    .close{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition: background .15s ease, transform .15s ease, border-color .15s ease;
+    }
+    .close:hover{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.20); transform: translateY(-1px)}
+    .close:active{transform: translateY(0)}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .top-cta{min-width: auto}
+      .work-grid{grid-template-columns: repeat(3, 1fr);}
+      .grid3{grid-template-columns: 1fr;}
+      .grid2{grid-template-columns: 1fr;}
+      .story{grid-template-columns: 1fr;}
+      .contact{grid-template-columns: 1fr;}
+      .modal-card .content{grid-template-columns: 1fr;}
+      .modal-card .preview{border-right:none; border-bottom: 1px solid rgba(255,255,255,.10);}
+      .wa-pill{display:inline-flex;}
+    }
+    @media (max-width: 640px){
+      nav.menu{display:none;}
+      .work-grid{grid-template-columns: repeat(2, 1fr);}
+      .form .fields{grid-template-columns: 1fr;}
+      .wa-pill{display:none;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img src="logo.png" alt="Logo CIBORG 347" />
+          <div class="name">
+            <b>CIBORG 347™</b>
+            <span>Landing Pages & Web Designs</span>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#trabajos">Trabajos</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#planes">Pago único</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="top-cta">
+          <a class="btn ghost" href="mailto:ciborg347@gmail.com" aria-label="Enviar email a CIBORG 347">Email</a>
+          <a class="btn primary" id="btnTopWhatsApp" href="#" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              <span class="dot" aria-hidden="true"></span>
+              Diseño web profesional • Pago único • Buenos Aires, Argentina
+            </div>
+
+            <h1>
+              Páginas web que <span class="grad">convierten</span> visitas en clientes.
+            </h1>
+
+            <p>
+              Soy <b>CIBORG 347™</b>. Creo landings y webs modernas para emprendedores: rápidas, claras, <b>pensadas para que te escriban</b> y te elijan.
+              Trato directo, sin intermediarios.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" id="btnHeroWhatsApp" href="#" rel="noopener">Pedí tu web por WhatsApp</a>
+              <a class="btn ghost" href="#trabajos">Ver trabajos reales</a>
+              <span class="kbd">Pago único</span>
+              <span class="kbd">Responsive</span>
+              <span class="kbd">Listo para publicar</span>
+            </div>
+
+            <div class="hero-meta">
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10Z" stroke="rgba(0,229,255,.9)" stroke-width="1.8"/>
+                  <path d="M9.5 12.2 11.3 14l3.9-4.2" stroke="rgba(255,60,255,.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Enfoque en confianza y conversión
+              </span>
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 6v6l4 2" stroke="rgba(185,124,255,.95)" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="rgba(255,255,255,.25)" stroke-width="1.6"/>
+                </svg>
+                Entrega rápida + guía para publicar
+              </span>
+              <span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 17V7a2 2 0 0 1 2-2h6l2 2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="rgba(61,255,183,.9)" stroke-width="1.8"/>
+                  <path d="M8 14h8" stroke="rgba(255,255,255,.35)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+                Portfolio real por rubros
+              </span>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Tarjeta destacada">
+            <div class="inner">
+              <div class="logo-big">
+                <img src="logo.png" alt="CIBORG 347™ - Landing Pages & Web Designs" />
+              </div>
+              <div class="mini">
+                <div class="stat">
+                  <b>Trato directo</b>
+                  <span>Hablás conmigo, definimos objetivos, y lo hago realidad.</span>
+                </div>
+                <div class="stat">
+                  <b>Pago único</b>
+                  <span>Sin vueltas. Si te gusta el diseño, avanzamos y publicamos.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Servicios</h2>
+            <p>Lo que entrego no es “una página linda”: es una web con estructura, estética y llamados a la acción para generar mensajes y ventas.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 6h16v12H4z" stroke="rgba(255,255,255,.55)" stroke-width="1.7"/>
+                  <path d="M7 9h10" stroke="rgba(0,229,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M7 13h6" stroke="rgba(255,60,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Landing Page (la que más vende)</h3>
+              <p>Ideal para captar clientes por WhatsApp: propuesta clara, secciones estratégicas y CTA visibles.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 4h12v16H6z" stroke="rgba(255,255,255,.55)" stroke-width="1.7"/>
+                  <path d="M9 8h6" stroke="rgba(0,229,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M9 12h6" stroke="rgba(255,60,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M9 16h4" stroke="rgba(185,124,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Web profesional (multi-sección)</h3>
+              <p>Para marcas que necesitan ordenar todo: servicios, galería, ubicación, reseñas, y contacto.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h7v7H4z" stroke="rgba(0,229,255,.9)" stroke-width="1.7"/>
+                  <path d="M13 7h7v7h-7z" stroke="rgba(255,60,255,.9)" stroke-width="1.7"/>
+                  <path d="M4 16h7v4H4z" stroke="rgba(185,124,255,.9)" stroke-width="1.7"/>
+                  <path d="M13 16h7v4h-7z" stroke="rgba(61,255,183,.9)" stroke-width="1.7"/>
+                </svg>
+              </div>
+              <h3>Portfolio / Catálogo por rubro</h3>
+              <p>Perfecto si vivís de mostrar: estética, barbería, gastronomía, refacciones, radio, eventos y más.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="trabajos">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Trabajos reales (demos y proyectos)</h2>
+            <p>Acá tenés ejemplos por rubro. Tocá cualquier tarjeta para ver detalles y abrir la demo.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-tools">
+          <div class="chips" id="chips"></div>
+          <div class="search">
+            <input id="search" type="text" placeholder="Buscar (ej: barber, radio, estética)..." autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="work-grid" id="workGrid" aria-live="polite"></div>
+
+        <div class="portfolio-footer">
+          <button class="btn ghost" id="btnToggleAll">Ver todos los trabajos</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Proceso simple y sin vueltas</h2>
+            <p>Te muestro el diseño primero. Si te gusta, avanzamos con el pago único y lo dejamos publicado.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 12h12" stroke="rgba(0,229,255,.9)" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 6v12" stroke="rgba(255,60,255,.9)" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" stroke="rgba(255,255,255,.25)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>1) Brief rápido</h3>
+              <p>Me contás tu rubro, objetivo (ventas/turnos/consultas) y qué querés mostrar.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h16v10H4z" stroke="rgba(255,255,255,.55)" stroke-width="1.7"/>
+                  <path d="M7 10h6" stroke="rgba(185,124,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M7 13h10" stroke="rgba(0,229,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>2) Diseño inicial</h3>
+              <p>Te muestro cómo quedaría la web con estética pro y estructura para convertir.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="pad">
+              <div class="icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 12.5 10.2 15.6 17 8.6" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="rgba(255,255,255,.25)" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <h3>3) Pago único + publicación</h3>
+              <p>Si te gusta, ajustamos detalles y la dejamos lista para compartir en redes y WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="planes">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Planes (pago único)</h2>
+            <p>Elegimos el plan según tu objetivo y rubro. Si querés, te recomiendo el más conveniente y te paso el precio por WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card price">
+            <div class="pad">
+              <h3>START</h3>
+              <p>Para arrancar ya y captar consultas.</p>
+              <ul class="list">
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Landing con secciones clave + CTA WhatsApp</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Diseño responsive (celu/compu)</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Listo para publicar y compartir</li>
+              </ul>
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn primary" id="btnPlanStart" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn ghost" href="#contacto">Quiero hablar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card price">
+            <div class="ribbon">Recomendado</div>
+            <div class="pad">
+              <h3>PRO</h3>
+              <p>Para verse marca y cerrar más.</p>
+              <ul class="list">
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Landing completa + portfolio + secciones estratégicas</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Optimizada para conversión (estructura y CTA)</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Textos claros + sección confianza (proceso, datos)</li>
+              </ul>
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn primary" id="btnPlanPro" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn ghost" href="#trabajos">Ver ejemplos</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card price">
+            <div class="pad">
+              <h3>ULTRA</h3>
+              <p>Modo agencia: presencia premium.</p>
+              <ul class="list">
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Web multi-sección (servicios, galería, FAQs, etc.)</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Portfolio avanzado por categorías + búsqueda</li>
+                <li><span class="check" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>Máxima personalización visual + componentes pro</li>
+              </ul>
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn primary" id="btnPlanUltra" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn ghost" href="#contacto">Cotizar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; color:var(--muted2); font-size:13px; line-height:1.55;">
+          <b>Buenos Aires, Argentina.</b> Email: <a href="mailto:ciborg347@gmail.com" style="text-decoration:underline; text-underline-offset:4px;">ciborg347@gmail.com</a>.
+          WhatsApp directo para presupuestos.
+        </div>
+      </div>
+    </section>
+
+    <section id="historia">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>¿Quién está detrás de CIBORG 347™?</h2>
+            <p>Historia real, enfoque real: tecnología, disciplina y ganas de ayudar a emprendedores a escalar su marca.</p>
+          </div>
+        </div>
+
+        <div class="story">
+          <div class="callout">
+            <div class="inner">
+              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Mi historia</h3>
+              <p class="quote" style="margin:0;">
+                En agosto de 2024 me operaron del corazón: cambio de válvula aórtica y marcapasos.
+                Eso me cambió la vida y me obligó a dejar el trabajo físico.
+                <br><br>
+                Hoy me dedico 100% a lo que más me gusta y puedo hacer con la compu: <b>crear páginas web que ayuden a emprendedores a verse profesionales y vender más</b>.
+                Me dicen “Ciborg” porque literalmente tengo tecnología adentro, y ese mismo enfoque lo pongo en cada web: <b>precisión, estética y resultados</b>.
+              </p>
+
+              <div class="row">
+                <span class="kbd">Trato directo</span>
+                <span class="kbd">Pago único</span>
+                <span class="kbd">Diseño pro</span>
+                <span class="kbd">Pensado para vender</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div class="inner">
+              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Lo que buscás (y lo que entrego)</h3>
+              <p class="quote" style="margin:0;">
+                Si tu negocio necesita más consultas, más confianza y más presencia, una web bien hecha lo resuelve:
+                <br><br>
+                • Te posiciona como marca<br>
+                • Muestra tu trabajo de forma ordenada<br>
+                • Dirige al cliente a un solo objetivo: <b>contactarte</b><br><br>
+                Si querés, te recomiendo la estructura ideal según tu rubro.
+              </p>
+
+              <div class="row">
+                <a class="btn primary" id="btnStoryWhatsApp" href="#" rel="noopener">Hablemos por WhatsApp</a>
+                <a class="btn ghost" href="#trabajos">Ver ejemplos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Contacto</h2>
+            <p>Mandame tu idea y te digo cuál plan te conviene. El formulario abre WhatsApp con el mensaje armado.</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="card form">
+            <div>
+              <h3 style="margin:0; font-family:Sora, Poppins, sans-serif;">Pedí presupuesto (WhatsApp)</h3>
+              <div class="helper">Completá estos datos y te armo una propuesta. Si no querés completar nada, tocá el botón y listo.</div>
+            </div>
+
+            <form id="quoteForm" novalidate>
+              <div class="fields">
+                <div>
+                  <label for="fName">Nombre</label>
+                  <input id="fName" name="name" type="text" placeholder="Tu nombre" />
+                </div>
+                <div>
+                  <label for="fBiz">Negocio</label>
+                  <input id="fBiz" name="biz" type="text" placeholder="Nombre del negocio" />
+                </div>
+                <div>
+                  <label for="fNiche">Rubro</label>
+                  <select id="fNiche" name="niche">
+                    <option value="">Elegir...</option>
+                    <option>Estética / Belleza</option>
+                    <option>Barbería / Peluquería</option>
+                    <option>Gastronomía</option>
+                    <option>Eventos / Artistas</option>
+                    <option>Radio / Streaming</option>
+                    <option>Refacciones / Construcción</option>
+                    <option>Gaming / Promos</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="fGoal">Objetivo</label>
+                  <select id="fGoal" name="goal">
+                    <option value="">Elegir...</option>
+                    <option>Recibir más consultas por WhatsApp</option>
+                    <option>Mostrar trabajos / portfolio</option>
+                    <option>Reservas / turnos</option>
+                    <option>Vender productos / menú</option>
+                    <option>Posicionar marca</option>
+                  </select>
+                </div>
+
+                <div class="full">
+                  <label for="fMsg">Detalles</label>
+                  <textarea id="fMsg" name="msg" placeholder="Contame qué querés mostrar (servicios, fotos, ubicación, redes, etc.)"></textarea>
+                </div>
+
+                <div class="full" style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;">
+                  <button type="button" class="btn primary" id="btnSendWhatsApp">Enviar por WhatsApp</button>
+                  <a class="btn ghost" id="btnDirectWhatsApp" href="#" rel="noopener">WhatsApp directo</a>
+                  <a class="btn ghost" href="mailto:ciborg347@gmail.com">Enviar email</a>
+                </div>
+
+                <div class="full helper">
+                  Ubicación: <b>Buenos Aires, Argentina</b> • Email: <b>ciborg347@gmail.com</b> • Pago único.
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="pad">
+              <h3>Datos</h3>
+              <p>
+                <b>CIBORG 347™</b><br>
+                Buenos Aires, Argentina<br>
+                Email: <a href="mailto:ciborg347@gmail.com" style="text-decoration:underline; text-underline-offset:4px;">ciborg347@gmail.com</a><br>
+                WhatsApp: <span style="color:var(--text); font-weight:800;">11 6449 9481</span>
+              </p>
+
+              <div style="margin-top:14px;">
+                <h3>Preguntas frecuentes</h3>
+                <p><b>¿Se paga antes?</b><br><span style="color:var(--muted);">Primero te muestro un diseño inicial. Si te gusta, avanzamos.</span></p>
+                <p><b>¿Funciona en celular?</b><br><span style="color:var(--muted);">Sí, todas las webs son responsive.</span></p>
+                <p><b>¿Incluye publicación?</b><br><span style="color:var(--muted);">Te la dejo lista para publicar y compartir (Render u hosting similar).</span></p>
+
+                <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                  <a class="btn primary" id="btnFooterWhatsApp" href="#" rel="noopener">Hablar ahora</a>
+                  <a class="btn ghost" href="#planes">Ver planes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <img src="logo.png" alt="CIBORG 347" style="width:44px; height:44px; border-radius:16px; border:1px solid rgba(255,255,255,.10); object-fit:cover;">
+              <div>
+                <div style="font-family:Sora, Poppins, sans-serif; font-weight:900; letter-spacing:.4px;">CIBORG 347™</div>
+                <div style="color:var(--muted2); font-size:12.5px;">Landing Pages & Web Designs</div>
+              </div>
+            </div>
+            <div class="fine">
+              Páginas web profesionales para emprendedores. Diseño moderno, estructura para conversión y contacto directo por WhatsApp. <b>Pago único.</b>
+            </div>
+            <div class="fine" style="margin-top:10px;">
+              © <span id="year"></span> CIBORG 347™ — Buenos Aires, Argentina
+            </div>
+          </div>
+
+          <div class="links">
+            <a href="#servicios">Servicios</a>
+            <a href="#trabajos">Trabajos</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#planes">Planes</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="wa-float" aria-label="Botón flotante de WhatsApp">
+      <div class="wa-pill">¿Hablamos por WhatsApp?</div>
+      <a class="wa-btn" id="btnFloatWhatsApp" href="#" rel="noopener" aria-label="Abrir WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 11.9a8 8 0 0 1-11.6 7L4 20l1.3-4.1A8 8 0 1 1 20 11.9Z" stroke="rgba(6,16,26,.9)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M9.4 7.8c-.2-.5-.4-.5-.7-.5h-.6c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.8 5.9 5.1 2.9 1.1 3.5.9 4.1.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.4-.3-.9-.5s-1.9-.9-2.2-1c-.3-.1-.6-.2-.8.2-.2.4-.9 1-1.1 1.2-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.1-.8l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6-.1-.2-.7-1.8-.9-2.3Z"
+                fill="rgba(6,16,26,.9)"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Detalle del trabajo">
+        <div class="bar">
+          <div class="left">
+            <span class="tag" id="mTag">Rubro</span>
+            <span class="modal-card bar title" style="background:none; border:none; padding:0; margin:0;" id="mTitle">Proyecto</span>
+          </div>
+          <button class="close" id="mClose" aria-label="Cerrar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="content">
+          <div class="preview">
+            <img id="mImg" alt="Vista previa del trabajo" />
+          </div>
+          <div class="side">
+            <div style="font-weight:900; font-family:Sora, Poppins, sans-serif; letter-spacing:.2px;" id="mShort"></div>
+            <p id="mInfo"></p>
+
+            <div class="actions">
+              <a class="btn primary" id="mOpenDemo" href="#" target="_blank" rel="noopener">Ver demo</a>
+              <a class="btn ghost" id="mWantSame" href="#" rel="noopener">Quiero una igual</a>
+              <button class="btn ghost" id="mCopyLink" type="button">Copiar link</button>
+            </div>
+
+            <div class="helper" style="margin-top:12px;">
+              Tip: si te gustó esta estructura, te la adapto a tu rubro y a tu marca.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CIBORG 347",
+    "areaServed": "Buenos Aires, Argentina",
+    "email": "ciborg347@gmail.com",
+    "url": "https://example.com",
+    "description": "Landing pages y web designs para emprendedores. Diseño moderno, responsive y enfocado en conversión. Pago único. Contacto por WhatsApp."
+  }
+  </script>
+
+  <script>
+    (function(){
+      const WHATSAPP_PHONE = "5491164499481";
+      const defaultMsg = "Hola CIBORG 347, quiero una página web para mi negocio. ¿Me pasás info y precios? (Pago único)";
+      const wa = (text) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+
+      const linkTop = document.getElementById("btnTopWhatsApp");
+      const linkHero = document.getElementById("btnHeroWhatsApp");
+      const linkStory = document.getElementById("btnStoryWhatsApp");
+      const linkFooter = document.getElementById("btnFooterWhatsApp");
+      const linkFloat = document.getElementById("btnFloatWhatsApp");
+      const linkDirect = document.getElementById("btnDirectWhatsApp");
+
+      [linkTop, linkHero, linkStory, linkFooter, linkFloat, linkDirect].forEach(a => {
+        if(!a) return;
+        a.href = wa(defaultMsg);
+        a.target = "_blank";
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const categoryLabels = {
+        all: "Todo",
+        estetica: "Estética",
+        barber: "Barbería",
+        food: "Gastronomía",
+        evento: "Eventos & Artistas",
+        radio: "Radio / Streaming",
+        refacciones: "Refacciones",
+        casino: "Gaming / Promos"
+      };
+
+      const works = [
+        { category:"estetica", img:"https://iili.io/KPyCnHu.jpg", link:"https://adda-nails.onrender.com/", short:"Mostrá tu trabajo con un diseño limpio y profesional.", info:"Landing pensada para estudios de belleza que necesitan transmitir prolijidad, estilo y confianza." },
+
+        { category:"barber", img:"https://iili.io/KPyvEcx.jpg", link:"https://barberia-elbebu.onrender.com/", short:"Presencia fuerte que posiciona tu barbería como marca.", info:"Estética moderna y masculina que genera autoridad." },
+        { category:"barber", img:"https://iili.io/KPyUCn1.jpg", link:"https://barber-shop-rodri.onrender.com/", short:"Elegancia y estilo en cada detalle.", info:"Diseño orientado a barberías que quieren diferenciarse." },
+
+        { category:"food", img:"https://iili.io/fF5pLGf.jpg", link:"https://dulce-juana.onrender.com/", short:"Imágenes irresistibles que generan ventas.", info:"Landing cálida y visual, perfecta para gastronomía." },
+
+        { category:"evento", img:"https://iili.io/f9a9K5Q.jpg", link:"https://tio-sergio.onrender.com", short:"Energía y ambiente en un diseño impactante.", info:"Ideal para salones y bailables." },
+        { category:"evento", img:"https://iili.io/faZQ0Ff.jpg", link:"https://web-mmg-oficial.onrender.com", short:"Showcase potente para eventos y artistas.", info:"Landing con estética pro para presentar el evento/producción, mostrar identidad y llevar tráfico directo a contacto/redes." },
+
+        { category:"radio", img:"https://iili.io/f9an4yX.jpg", link:"https://radioimagen.onrender.com", short:"Tu radio con presencia moderna.", info:"Streaming integrado y visual profesional." },
+        { category:"radio", img:"https://iili.io/farGiml.jpg", link:"https://radiocannafest.onrender.com", short:"Radio Cannafest con identidad propia.", info:"Landing moderna para radio temática con estética fuerte y presencia profesional." },
+
+        { category:"refacciones", img:"https://iili.io/farX3hl.jpg", link:"https://jyl-refacciones.onrender.com", short:"Refacciones y construcciones para captar presupuestos.", info:"Landing para refacciones y construcciones, ideal para mostrar trabajos, servicios y captar presupuestos por WhatsApp." },
+
+        { category:"casino", img:"https://iili.io/KPygQXS.jpg", link:"https://facu-casino.onrender.com/", short:"Diseño directo para captar jugadores.", info:"Estética intensa y conversiones rápidas." },
+        { category:"casino", img:"https://iili.io/KPyrMj2.jpg", link:"https://dragon-casino.onrender.com/", short:"Energía visual para atraer usuarios.", info:"Landing con estilo fuego y dinamismo." },
+        { category:"casino", img:"https://iili.io/KPyDVHP.jpg", link:"https://dinasty-bet.onrender.com/", short:"Identidad deportiva sólida.", info:"Perfecta para apuestas y deportes." },
+        { category:"casino", img:"https://iili.io/KigNdVS.jpg", link:"https://giraygana-fortunaplay.onrender.com/", short:"Diseño veloz y llamativo.", info:"Enfocada en interacción rápida." },
+        { category:"casino", img:"https://iili.io/Kigv3Ij.jpg", link:"https://ganamostodosjuntos.onrender.com/", short:"Impacto fuerte para gaming.", info:"Ideal para promociones continuas." },
+        { category:"casino", img:"https://iili.io/KiggTcN.jpg", link:"https://lions-casino.onrender.com/", short:"Identidad premium.", info:"Estética limpia y profesional." },
+        { category:"casino", img:"https://iili.io/f9a9Fdx.jpg", link:"https://giraygana-ijae.onrender.com", short:"Máxima rapidez para captar curiosos.", info:"Diseño simple y efectivo." }
+      ];
+
+      function titleFromLink(url){
+        try{
+          const u = new URL(url);
+          const host = u.hostname.replace("www.","");
+          const base = host.split(".")[0] || host;
+          const nice = base
+            .replace(/[-_]+/g, " ")
+            .replace(/\b\w/g, (m) => m.toUpperCase());
+          return nice;
+        }catch(e){
+          return "Proyecto";
+        }
+      }
+
+      const featuredOrder = [
+        "https://adda-nails.onrender.com/",
+        "https://barberia-elbebu.onrender.com/",
+        "https://dulce-juana.onrender.com/",
+        "https://tio-sergio.onrender.com",
+        "https://web-mmg-oficial.onrender.com",
+        "https://radioimagen.onrender.com",
+        "https://jyl-refacciones.onrender.com",
+        "https://lions-casino.onrender.com/"
+      ];
+
+      const normalize = (s) => (s || "").toString().toLowerCase().trim();
+
+      let showAll = false;
+      let activeCat = "all";
+      let searchTerm = "";
+
+      const chipsEl = document.getElementById("chips");
+      const gridEl = document.getElementById("workGrid");
+      const searchEl = document.getElementById("search");
+      const btnToggleAll = document.getElementById("btnToggleAll");
+
+      const counts = works.reduce((acc, w) => {
+        acc[w.category] = (acc[w.category] || 0) + 1;
+        return acc;
+      }, {});
+
+      const chipKeys = ["all", "estetica", "barber", "food", "evento", "radio", "refacciones", "casino"];
+
+      function renderChips(){
+        chipsEl.innerHTML = "";
+        chipKeys.forEach(key => {
+          const c = document.createElement("button");
+          c.type = "button";
+          c.className = "chip" + (activeCat === key ? " active" : "");
+          const label = categoryLabels[key] || key;
+          const n = key === "all" ? works.length : (counts[key] || 0);
+          c.textContent = `${label} (${n})`;
+          c.addEventListener("click", () => {
+            activeCat = key;
+            renderChips();
+            renderWorks();
+          });
+          chipsEl.appendChild(c);
+        });
+      }
+
+      function getFeatured(){
+        const map = new Map(works.map(w => [w.link, w]));
+        const featured = [];
+        featuredOrder.forEach(l => { if(map.has(l)) featured.push(map.get(l)); });
+        const remaining = works.filter(w => !featuredOrder.includes(w.link));
+        return { featured, remaining };
+      }
+
+      function passesFilters(w){
+        if(activeCat !== "all" && w.category !== activeCat) return false;
+        if(searchTerm){
+          const hay = normalize([
+            w.category, categoryLabels[w.category], titleFromLink(w.link), w.short, w.info, w.link
+          ].join(" "));
+          if(!hay.includes(searchTerm)) return false;
+        }
+        return true;
+      }
+
+      function renderWorks(){
+        const { featured, remaining } = getFeatured();
+        let list = showAll ? featured.concat(remaining) : featured;
+        list = list.filter(passesFilters);
+
+        gridEl.innerHTML = "";
+        if(list.length === 0){
+          gridEl.innerHTML = `<div class="card" style="grid-column:1/-1;"><div class="pad"><h3>No hay resultados</h3><p>Probá con otra categoría o limpiá la búsqueda.</p></div></div>`;
+          return;
+        }
+
+        list.forEach((w) => {
+          const card = document.createElement("article");
+          card.className = "work";
+          const title = titleFromLink(w.link);
+          const tag = categoryLabels[w.category] || w.category;
+
+          card.innerHTML = `
+            <div class="thumb">
+              <img src="${w.img}" alt="${title}" loading="lazy" />
+            </div>
+            <div class="meta">
+              <div class="topline">
+                <span class="tag">${tag}</span>
+                <span style="color:var(--muted2); font-weight:800; font-size:12px;">Ver</span>
+              </div>
+              <div class="title">${title}</div>
+              <div class="short">${w.short}</div>
+            </div>
+          `;
+
+          card.addEventListener("click", () => openModal(w));
+          gridEl.appendChild(card);
+        });
+
+        btnToggleAll.textContent = showAll ? "Ver solo destacados" : "Ver todos los trabajos";
+      }
+
+      btnToggleAll.addEventListener("click", () => {
+        showAll = !showAll;
+        renderWorks();
+      });
+
+      searchEl.addEventListener("input", (e) => {
+        searchTerm = normalize(e.target.value);
+        renderWorks();
+      });
+
+      const modal = document.getElementById("modal");
+      const mClose = document.getElementById("mClose");
+      const mTag = document.getElementById("mTag");
+      const mTitle = document.getElementById("mTitle");
+      const mImg = document.getElementById("mImg");
+      const mShort = document.getElementById("mShort");
+      const mInfo = document.getElementById("mInfo");
+      const mOpenDemo = document.getElementById("mOpenDemo");
+      const mWantSame = document.getElementById("mWantSame");
+      const mCopyLink = document.getElementById("mCopyLink");
+
+      let lastWork = null;
+
+      function openModal(w){
+        lastWork = w;
+        const title = titleFromLink(w.link);
+        const tag = categoryLabels[w.category] || w.category;
+
+        mTag.textContent = tag;
+        mTitle.textContent = title;
+        mImg.src = w.img;
+        mImg.alt = title;
+        mShort.textContent = w.short;
+        mInfo.textContent = w.info;
+
+        mOpenDemo.href = w.link;
+
+        const msg = `Hola CIBORG 347, vi tu demo de ${title} (${tag}) y quiero una web similar para mi negocio. Mi rubro es: ____. ¿Cómo seguimos? (Pago único)`;
+        mWantSame.href = wa(msg);
+        mWantSame.target = "_blank";
+
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(){
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      }
+
+      mClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if(e.target === modal) closeModal();
+      });
+      window.addEventListener("keydown", (e) => {
+        if(e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      mCopyLink.addEventListener("click", async () => {
+        if(!lastWork) return;
+        try{
+          await navigator.clipboard.writeText(lastWork.link);
+          mCopyLink.textContent = "Link copiado";
+          setTimeout(() => mCopyLink.textContent = "Copiar link", 1400);
+        }catch(e){
+          mCopyLink.textContent = "No se pudo copiar";
+          setTimeout(() => mCopyLink.textContent = "Copiar link", 1400);
+        }
+      });
+
+      const btnSend = document.getElementById("btnSendWhatsApp");
+      btnSend.addEventListener("click", () => {
+        const name = document.getElementById("fName").value.trim();
+        const biz = document.getElementById("fBiz").value.trim();
+        const niche = document.getElementById("fNiche").value.trim();
+        const goal = document.getElementById("fGoal").value.trim();
+        const msg = document.getElementById("fMsg").value.trim();
+
+        const parts = [];
+        parts.push("Hola CIBORG 347, quiero presupuesto para una página web (pago único).");
+        if(name) parts.push(`Nombre: ${name}`);
+        if(biz) parts.push(`Negocio: ${biz}`);
+        if(niche) parts.push(`Rubro: ${niche}`);
+        if(goal) parts.push(`Objetivo: ${goal}`);
+        if(msg) parts.push(`Detalles: ${msg}`);
+        parts.push("¿Cómo seguimos?");
+
+        window.open(wa(parts.join("\n")), "_blank");
+      });
+
+      const planMsg = (plan) => `Hola CIBORG 347, quiero consultar precio del plan ${plan} (pago único). Mi rubro es: ____. Objetivo: ____.`;
+      document.getElementById("btnPlanStart").href = wa(planMsg("START"));
+      document.getElementById("btnPlanPro").href = wa(planMsg("PRO"));
+      document.getElementById("btnPlanUltra").href = wa(planMsg("ULTRA"));
+      document.getElementById("btnPlanStart").target = "_blank";
+      document.getElementById("btnPlanPro").target = "_blank";
+      document.getElementById("btnPlanUltra").target = "_blank";
+
+      renderChips();
+      renderWorks();
+    })();
+  </script>
+</body>
+</html>
