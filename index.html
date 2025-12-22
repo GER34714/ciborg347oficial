@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
@@ -619,13 +620,13 @@
       background: var(--surface2);
     }
 
-    /* ====== GRID TARJETAS PAREJAS ====== */
+    /* ====== GRID TARJETAS ====== */
     .work-grid{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       align-items: stretch;
-      grid-auto-rows: 1fr; /* fuerza filas parejitas */
+      grid-auto-rows: 1fr;
     }
 
     .work{
@@ -736,10 +737,10 @@
       font-weight:500;
 
       display: -webkit-box;
-      -webkit-line-clamp: 2;   /* misma altura visual en móviles */
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      margin-top: auto;         /* empuja y hace parejas */
+      margin-top: auto;
       min-height: calc(12.6px * 1.45 * 2);
     }
 
@@ -1131,17 +1132,55 @@
       .modal-card .preview{border-right:none; border-bottom: 1px solid var(--border3);}
       .wa-pill{display:inline-flex;}
     }
+
+    /* ====== MOBILE: tarjetas más GRANDES ====== */
     @media (max-width: 640px){
       nav.menu{display:none;}
-      .work-grid{grid-template-columns: repeat(2, 1fr);} /* parejo */
-      .form .fields{grid-template-columns: 1fr;}
-      .wa-pill{display:none;}
       .top-cta{width:100%; justify-content:flex-start;}
       .brand{min-width:auto;}
       .modal{padding: 12px; padding-bottom: calc(12px + env(safe-area-inset-bottom));}
       .modal-card{border-radius: 22px;}
       .demo-wrap{padding: 8px;}
       .demo-frame{border-radius: 16px;}
+
+      /* Mantengo 2 columnas pero agrando la tarjeta: más padding interno,
+         thumb más grande y textos un toque más grandes */
+      .work-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .work{
+        border-radius: 24px;
+        padding: 3px;
+      }
+      .work-inner{
+        border-radius: 22px;
+      }
+      .work .thumb{
+        margin: 12px 12px 0;
+        border-radius: 18px;
+        aspect-ratio: 4 / 3;
+        padding: 6px; /* menos padding para que la imagen se vea más grande */
+      }
+      .work .meta{
+        padding: 16px 16px 18px;
+      }
+      .work .title{
+        font-size: 14px;
+      }
+      .work .short{
+        font-size: 13px;
+        -webkit-line-clamp: 3; /* un toque más alto visual */
+        min-height: calc(13px * 1.45 * 3);
+      }
+
+      .wa-pill{display:none;}
+    }
+
+    /* Teléfonos MUY chicos: 1 columna para que se vean todavía más grandes */
+    @media (max-width: 420px){
+      .work-grid{grid-template-columns: 1fr;}
+      .work .thumb{aspect-ratio: 16 / 10;}
     }
   </style>
 </head>
@@ -1810,7 +1849,6 @@
       }
 
       function renderWorks(){
-        // CLAVE: cuando showAll=true -> TODOS los works (sin perder ninguno)
         let list = showAll ? works.slice() : getFeatured();
         list = list.filter(passesFilters);
 
@@ -1964,21 +2002,16 @@
       function dockWhatsApp(){
         if(!waFloat || !footer) return;
 
-        // margen base
         const base = 16;
-        // espacio seguro mobile
         const safe = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--waSafe')) || base;
 
         const footerRect = footer.getBoundingClientRect();
         const vh = window.innerHeight;
 
-        // Si el footer está entrando, elevamos el botón la misma cantidad para que quede por encima
-        // overlap = cuánto se mete el footer en la pantalla desde abajo
         const overlap = (vh - footerRect.top);
-        const extra = overlap > 0 ? overlap + 12 : 0; // 12px aire
+        const extra = overlap > 0 ? overlap + 12 : 0;
         const newBottom = safe + extra;
 
-        // Evitamos que se vaya demasiado arriba en pantallas chicas
         waFloat.style.bottom = `calc(${clamp(newBottom, safe, vh * 0.55)}px + env(safe-area-inset-bottom))`;
       }
 
@@ -1992,4 +2025,4 @@
   </script>
 </body>
 </html>
-
+```
