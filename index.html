@@ -12,11 +12,10 @@
   <meta property="og:title" content="CIBORG 347™ | Páginas web que convierten" />
   <meta property="og:description" content="Landing Pages & Web Designs. Diseño profesional, enfoque en ventas y contacto directo por WhatsApp. Pago único." />
   <meta property="og:type" content="website" />
-  <!-- Reemplazá og:image por un link público a tu logo para previews (WhatsApp/IG) -->
-  <meta property="og:image" content="logo.png" />
+  <meta property="og:image" content="https://iili.io/fETkPEv.md.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/png" href="https://iili.io/fETkPEv.md.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,14 +161,18 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:14px;
       padding: 12px 0;
+      flex-wrap: wrap; /* full responsive */
     }
     .brand{
       display:flex; align-items:center; gap:12px;
       min-width: 220px;
+      flex: 1 1 220px;
     }
     .brand img{
       width:42px; height:42px; border-radius: 14px;
-      object-fit: cover;
+      object-fit: contain; /* evita recorte */
+      padding: 6px;
+      background: rgba(255,255,255,.04);
       box-shadow: 0 12px 30px rgba(0,229,255,.10);
       border: 1px solid rgba(255,255,255,.10);
     }
@@ -190,6 +193,7 @@
       display:flex; align-items:center; gap:14px;
       flex-wrap: wrap;
       justify-content:flex-end;
+      flex: 2 1 340px;
     }
     nav.menu a{
       font-weight: 600;
@@ -208,6 +212,7 @@
       display:flex; align-items:center; gap:10px;
       justify-content:flex-end;
       min-width: 260px;
+      flex: 1 1 260px;
     }
 
     .hero{
@@ -304,11 +309,12 @@
       align-items:center;
       justify-content:center;
       min-height: 250px;
+      padding: 10px;
     }
     .hero-card .logo-big img{
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* evita recorte */
       display:block;
     }
     .hero-card .mini{
@@ -463,15 +469,21 @@
       aspect-ratio: 4 / 3;
       width:100%;
       background: rgba(255,255,255,.03);
-      display:block;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       overflow:hidden;
+      padding: 8px; /* ayuda a que no “pegue” en el borde */
     }
     .work img{
       width:100%;
       height:100%;
-      object-fit: cover;
+      object-fit: contain; /* CLAVE: se ve completa dentro del recuadro */
       display:block;
-      transform: scale(1.02);
+      transform: none; /* evita recorte por zoom */
+      border-radius: 14px;
+      background: rgba(0,0,0,.15);
+      border: 1px solid rgba(255,255,255,.06);
     }
     .work .meta{
       padding: 12px 12px 12px;
@@ -754,12 +766,19 @@
       background: rgba(255,255,255,.03);
       border-right: 1px solid rgba(255,255,255,.10);
       min-height: 360px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px;
     }
     .modal-card .preview img{
       width:100%;
       height:100%;
-      object-fit: cover;
+      object-fit: contain; /* evita recorte */
       display:block;
+      border-radius: 18px;
+      background: rgba(0,0,0,.15);
+      border: 1px solid rgba(255,255,255,.08);
     }
     .modal-card .side{
       padding: 16px 16px;
@@ -804,6 +823,8 @@
       .work-grid{grid-template-columns: repeat(2, 1fr);}
       .form .fields{grid-template-columns: 1fr;}
       .wa-pill{display:none;}
+      .top-cta{width:100%; justify-content:flex-start;}
+      .brand{min-width:auto;}
     }
   </style>
 </head>
@@ -815,7 +836,7 @@
     <div class="wrap">
       <div class="topbar">
         <a class="brand" href="#inicio" aria-label="Ir al inicio">
-          <img src="logo.png" alt="Logo CIBORG 347" />
+          <img src="https://iili.io/fETkPEv.md.png" alt="Logo CIBORG 347" />
           <div class="name">
             <b>CIBORG 347™</b>
             <span>Landing Pages & Web Designs</span>
@@ -826,7 +847,7 @@
           <a href="#servicios">Servicios</a>
           <a href="#trabajos">Trabajos</a>
           <a href="#proceso">Proceso</a>
-          <a href="#planes">Pago único</a>
+          <a href="#planes">Planes</a>
           <a href="#contacto">Contacto</a>
         </nav>
 
@@ -894,7 +915,7 @@
           <div class="hero-card" aria-label="Tarjeta destacada">
             <div class="inner">
               <div class="logo-big">
-                <img src="logo.png" alt="CIBORG 347™ - Landing Pages & Web Designs" />
+                <img src="https://iili.io/fETkPEv.md.png" alt="CIBORG 347™ - Landing Pages & Web Designs" />
               </div>
               <div class="mini">
                 <div class="stat">
@@ -903,7 +924,7 @@
                 </div>
                 <div class="stat">
                   <b>Pago único</b>
-                  <span>Sin vueltas. Si te gusta el diseño, avanzamos y publicamos.</span>
+                  <span>Te armo un plan a medida, accesible para tu emprendimiento.</span>
                 </div>
               </div>
             </div>
@@ -932,7 +953,7 @@
                   <path d="M7 13h6" stroke="rgba(255,60,255,.9)" stroke-width="1.7" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Landing Page (la que más vende)</h3>
+              <h3>Landing Page (la que más convierte)</h3>
               <p>Ideal para captar clientes por WhatsApp: propuesta clara, secciones estratégicas y CTA visibles.</p>
             </div>
           </div>
@@ -1042,7 +1063,7 @@
                 </svg>
               </div>
               <h3>3) Pago único + publicación</h3>
-              <p>Si te gusta, ajustamos detalles y la dejamos lista para compartir en redes y WhatsApp.</p>
+              <p>Definimos un plan accesible según tu emprendimiento, ajustamos detalles y la dejamos lista para compartir.</p>
             </div>
           </div>
         </div>
@@ -1053,20 +1074,20 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>Planes (pago único)</h2>
-            <p>Elegimos el plan según tu objetivo y rubro. Si querés, te recomiendo el más conveniente y te paso el precio por WhatsApp.</p>
+            <h2>Planes personalizados (pago único)</h2>
+            <p>La idea es simple: <b>que todos puedan acceder</b> a una web profesional, con un plan a medida según rubro, contenido y objetivo. Te cotizo por WhatsApp según tu caso.</p>
           </div>
         </div>
 
         <div class="grid3">
           <div class="card price">
             <div class="pad">
-              <h3>START</h3>
-              <p>Para arrancar ya y captar consultas.</p>
+              <h3>Plan Accesible</h3>
+              <p>Para arrancar con presencia profesional y captar consultas.</p>
               <ul class="list">
                 <li><span class="check" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>Landing con secciones clave + CTA WhatsApp</li>
+                </span>Landing con secciones clave + WhatsApp</li>
                 <li><span class="check" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>Diseño responsive (celu/compu)</li>
@@ -1075,17 +1096,17 @@
                 </span>Listo para publicar y compartir</li>
               </ul>
               <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn primary" id="btnPlanStart" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn primary" id="btnPlanAccesible" href="#" rel="noopener">Cotizar mi plan</a>
                 <a class="btn ghost" href="#contacto">Quiero hablar</a>
               </div>
             </div>
           </div>
 
           <div class="card price">
-            <div class="ribbon">Recomendado</div>
+            <div class="ribbon">Más elegido</div>
             <div class="pad">
-              <h3>PRO</h3>
-              <p>Para verse marca y cerrar más.</p>
+              <h3>Plan Crecimiento</h3>
+              <p>Para verse marca y convertir mejor.</p>
               <ul class="list">
                 <li><span class="check" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1095,10 +1116,10 @@
                 </span>Optimizada para conversión (estructura y CTA)</li>
                 <li><span class="check" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>Textos claros + sección confianza (proceso, datos)</li>
+                </span>Textos claros + secciones de confianza</li>
               </ul>
               <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn primary" id="btnPlanPro" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn primary" id="btnPlanCrecimiento" href="#" rel="noopener">Cotizar mi plan</a>
                 <a class="btn ghost" href="#trabajos">Ver ejemplos</a>
               </div>
             </div>
@@ -1106,8 +1127,8 @@
 
           <div class="card price">
             <div class="pad">
-              <h3>ULTRA</h3>
-              <p>Modo agencia: presencia premium.</p>
+              <h3>Plan Marca Pro</h3>
+              <p>Para presencia premium (tipo agencia).</p>
               <ul class="list">
                 <li><span class="check" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="rgba(61,255,183,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1120,7 +1141,7 @@
                 </span>Máxima personalización visual + componentes pro</li>
               </ul>
               <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="btn primary" id="btnPlanUltra" href="#" rel="noopener">Consultar precio</a>
+                <a class="btn primary" id="btnPlanMarca" href="#" rel="noopener">Cotizar mi plan</a>
                 <a class="btn ghost" href="#contacto">Cotizar</a>
               </div>
             </div>
@@ -1128,8 +1149,7 @@
         </div>
 
         <div style="margin-top:14px; color:var(--muted2); font-size:13px; line-height:1.55;">
-          <b>Buenos Aires, Argentina.</b> Email: <a href="mailto:ciborg347@gmail.com" style="text-decoration:underline; text-underline-offset:4px;">ciborg347@gmail.com</a>.
-          WhatsApp directo para presupuestos.
+          <b>Importante:</b> el valor final se define según tu emprendimiento (contenido, secciones, rubro y objetivo), para que sea <b>accesible</b> y realista en el contexto actual. Siempre <b>pago único</b>.
         </div>
       </div>
     </section>
@@ -1138,42 +1158,35 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>¿Quién está detrás de CIBORG 347™?</h2>
-            <p>Historia real, enfoque real: tecnología, disciplina y ganas de ayudar a emprendedores a escalar su marca.</p>
+            <h2>Sobre CIBORG 347™</h2>
+            <p>Marca directa, estética pro, y foco en resultados: que te escriban y te compren.</p>
           </div>
         </div>
 
         <div class="story">
           <div class="callout">
             <div class="inner">
-              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Mi historia</h3>
+              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Qué hago</h3>
               <p class="quote" style="margin:0;">
-                En agosto de 2024 me operaron del corazón: cambio de válvula aórtica y marcapasos.
-                Eso me cambió la vida y me obligó a dejar el trabajo físico.
-                <br><br>
-                Hoy me dedico 100% a lo que más me gusta y puedo hacer con la compu: <b>crear páginas web que ayuden a emprendedores a verse profesionales y vender más</b>.
-                Me dicen “Ciborg” porque literalmente tengo tecnología adentro, y ese mismo enfoque lo pongo en cada web: <b>precisión, estética y resultados</b>.
+                Me dedico a crear <b>páginas web profesionales para emprendedores</b>: landings claras, rápidas y con estrategia.
+                La idea es que tu negocio se vea ordenado, confiable, y que el cliente tenga un camino simple: <b>verte, confiar y contactarte</b>.
               </p>
 
               <div class="row">
                 <span class="kbd">Trato directo</span>
                 <span class="kbd">Pago único</span>
                 <span class="kbd">Diseño pro</span>
-                <span class="kbd">Pensado para vender</span>
+                <span class="kbd">Pensado para convertir</span>
               </div>
             </div>
           </div>
 
           <div class="callout">
             <div class="inner">
-              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Lo que buscás (y lo que entrego)</h3>
+              <h3 style="margin:0 0 10px; font-family:Sora, Poppins, sans-serif;">Por qué “CIBORG”</h3>
               <p class="quote" style="margin:0;">
-                Si tu negocio necesita más consultas, más confianza y más presencia, una web bien hecha lo resuelve:
-                <br><br>
-                • Te posiciona como marca<br>
-                • Muestra tu trabajo de forma ordenada<br>
-                • Dirige al cliente a un solo objetivo: <b>contactarte</b><br><br>
-                Si querés, te recomiendo la estructura ideal según tu rubro.
+                “CIBORG” representa esa mezcla entre lo humano y la tecnología: creatividad + precisión.
+                Ese concepto lo llevo a cada web: <b>estructura, estética y una experiencia fluida</b> para que tu marca se note.
               </p>
 
               <div class="row">
@@ -1192,7 +1205,7 @@
         <div class="section-head">
           <div>
             <h2>Contacto</h2>
-            <p>Mandame tu idea y te digo cuál plan te conviene. El formulario abre WhatsApp con el mensaje armado.</p>
+            <p>Mandame tu idea y te cotizo un plan personalizado (pago único). El formulario abre WhatsApp con el mensaje armado.</p>
           </div>
         </div>
 
@@ -1200,7 +1213,7 @@
           <div class="card form">
             <div>
               <h3 style="margin:0; font-family:Sora, Poppins, sans-serif;">Pedí presupuesto (WhatsApp)</h3>
-              <div class="helper">Completá estos datos y te armo una propuesta. Si no querés completar nada, tocá el botón y listo.</div>
+              <div class="helper">Completá estos datos y te armo una propuesta accesible según tu emprendimiento.</div>
             </div>
 
             <form id="quoteForm" novalidate>
@@ -1251,7 +1264,7 @@
                 </div>
 
                 <div class="full helper">
-                  Ubicación: <b>Buenos Aires, Argentina</b> • Email: <b>ciborg347@gmail.com</b> • Pago único.
+                  Ubicación: <b>Buenos Aires, Argentina</b> • Email: <b>ciborg347@gmail.com</b> • <b>Pago único</b>.
                 </div>
               </div>
             </form>
@@ -1270,8 +1283,8 @@
               <div style="margin-top:14px;">
                 <h3>Preguntas frecuentes</h3>
                 <p><b>¿Se paga antes?</b><br><span style="color:var(--muted);">Primero te muestro un diseño inicial. Si te gusta, avanzamos.</span></p>
-                <p><b>¿Funciona en celular?</b><br><span style="color:var(--muted);">Sí, todas las webs son responsive.</span></p>
-                <p><b>¿Incluye publicación?</b><br><span style="color:var(--muted);">Te la dejo lista para publicar y compartir (Render u hosting similar).</span></p>
+                <p><b>¿Funciona en celular?</b><br><span style="color:var(--muted);">Sí, la web es full responsive.</span></p>
+                <p><b>¿El precio es fijo?</b><br><span style="color:var(--muted);">No: armo un plan personalizado y accesible según tu emprendimiento.</span></p>
 
                 <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
                   <a class="btn primary" id="btnFooterWhatsApp" href="#" rel="noopener">Hablar ahora</a>
@@ -1290,14 +1303,14 @@
         <div class="footer-grid">
           <div>
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-              <img src="logo.png" alt="CIBORG 347" style="width:44px; height:44px; border-radius:16px; border:1px solid rgba(255,255,255,.10); object-fit:cover;">
+              <img src="https://iili.io/fETkPEv.md.png" alt="CIBORG 347" style="width:44px; height:44px; border-radius:16px; border:1px solid rgba(255,255,255,.10); object-fit:contain; padding:6px; background:rgba(255,255,255,.04);">
               <div>
                 <div style="font-family:Sora, Poppins, sans-serif; font-weight:900; letter-spacing:.4px;">CIBORG 347™</div>
                 <div style="color:var(--muted2); font-size:12.5px;">Landing Pages & Web Designs</div>
               </div>
             </div>
             <div class="fine">
-              Páginas web profesionales para emprendedores. Diseño moderno, estructura para conversión y contacto directo por WhatsApp. <b>Pago único.</b>
+              Páginas web profesionales para emprendedores. Diseño moderno, estructura para conversión y contacto directo por WhatsApp. <b>Pago único</b> y planes <b>personalizados</b>.
             </div>
             <div class="fine" style="margin-top:10px;">
               © <span id="year"></span> CIBORG 347™ — Buenos Aires, Argentina
@@ -1349,12 +1362,12 @@
 
             <div class="actions">
               <a class="btn primary" id="mOpenDemo" href="#" target="_blank" rel="noopener">Ver demo</a>
-              <a class="btn ghost" id="mWantSame" href="#" rel="noopener">Quiero una igual</a>
+              <a class="btn ghost" id="mWantSomething" href="#" rel="noopener">Quiero algo así para mi negocio/marca</a>
               <button class="btn ghost" id="mCopyLink" type="button">Copiar link</button>
             </div>
 
             <div class="helper" style="margin-top:12px;">
-              Tip: si te gustó esta estructura, te la adapto a tu rubro y a tu marca.
+              Te lo adapto a tu rubro y a tu marca, con un plan accesible y pago único.
             </div>
           </div>
         </div>
@@ -1369,15 +1382,15 @@
     "name": "CIBORG 347",
     "areaServed": "Buenos Aires, Argentina",
     "email": "ciborg347@gmail.com",
-    "url": "https://example.com",
-    "description": "Landing pages y web designs para emprendedores. Diseño moderno, responsive y enfocado en conversión. Pago único. Contacto por WhatsApp."
+    "url": "https://ciborg347.onrender.com",
+    "description": "Landing pages y web designs para emprendedores. Diseño moderno, responsive y enfocado en conversión. Pago único. Planes personalizados y accesibles. Contacto por WhatsApp."
   }
   </script>
 
   <script>
     (function(){
       const WHATSAPP_PHONE = "5491164499481";
-      const defaultMsg = "Hola CIBORG 347, quiero una página web para mi negocio. ¿Me pasás info y precios? (Pago único)";
+      const defaultMsg = "Hola CIBORG 347, quiero una página web para mi negocio/marca. ¿Me contás cómo trabajás y me armás un plan accesible? (Pago único)";
       const wa = (text) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 
       const linkTop = document.getElementById("btnTopWhatsApp");
@@ -1420,7 +1433,7 @@
         { category:"radio", img:"https://iili.io/f9an4yX.jpg", link:"https://radioimagen.onrender.com", short:"Tu radio con presencia moderna.", info:"Streaming integrado y visual profesional." },
         { category:"radio", img:"https://iili.io/farGiml.jpg", link:"https://radiocannafest.onrender.com", short:"Radio Cannafest con identidad propia.", info:"Landing moderna para radio temática con estética fuerte y presencia profesional." },
 
-        { category:"refacciones", img:"https://iili.io/farX3hl.jpg", link:"https://jyl-refacciones.onrender.com", short:"Refacciones y construcciones para captar presupuestos.", info:"Landing para refacciones y construcciones, ideal para mostrar trabajos, servicios y captar presupuestos por WhatsApp." },
+        { category:"refacciones", img:"https://iili.io/farX3hl.jpg", link:"https://jyl-refacciones.onrender.com/", short:"Refacciones y construcciones para captar presupuestos.", info:"Landing para refacciones y construcciones, ideal para mostrar trabajos, servicios y captar presupuestos por WhatsApp." },
 
         { category:"casino", img:"https://iili.io/KPygQXS.jpg", link:"https://facu-casino.onrender.com/", short:"Diseño directo para captar jugadores.", info:"Estética intensa y conversiones rápidas." },
         { category:"casino", img:"https://iili.io/KPyrMj2.jpg", link:"https://dragon-casino.onrender.com/", short:"Energía visual para atraer usuarios.", info:"Landing con estilo fuego y dinamismo." },
@@ -1567,7 +1580,7 @@
       const mShort = document.getElementById("mShort");
       const mInfo = document.getElementById("mInfo");
       const mOpenDemo = document.getElementById("mOpenDemo");
-      const mWantSame = document.getElementById("mWantSame");
+      const mWantSomething = document.getElementById("mWantSomething");
       const mCopyLink = document.getElementById("mCopyLink");
 
       let lastWork = null;
@@ -1586,9 +1599,9 @@
 
         mOpenDemo.href = w.link;
 
-        const msg = `Hola CIBORG 347, vi tu demo de ${title} (${tag}) y quiero una web similar para mi negocio. Mi rubro es: ____. ¿Cómo seguimos? (Pago único)`;
-        mWantSame.href = wa(msg);
-        mWantSame.target = "_blank";
+        const msg = `Hola CIBORG 347, vi tu demo de ${title} (${tag}) y quiero algo así para mi negocio/marca. Mi rubro es: ____. Objetivo: ____. ¿Me armás un plan accesible? (Pago único)`;
+        mWantSomething.href = wa(msg);
+        mWantSomething.target = "_blank";
 
         modal.classList.add("open");
         modal.setAttribute("aria-hidden","false");
@@ -1630,7 +1643,7 @@
         const msg = document.getElementById("fMsg").value.trim();
 
         const parts = [];
-        parts.push("Hola CIBORG 347, quiero presupuesto para una página web (pago único).");
+        parts.push("Hola CIBORG 347, quiero presupuesto para una página web (pago único) con un plan accesible y personalizado.");
         if(name) parts.push(`Nombre: ${name}`);
         if(biz) parts.push(`Negocio: ${biz}`);
         if(niche) parts.push(`Rubro: ${niche}`);
@@ -1641,13 +1654,13 @@
         window.open(wa(parts.join("\n")), "_blank");
       });
 
-      const planMsg = (plan) => `Hola CIBORG 347, quiero consultar precio del plan ${plan} (pago único). Mi rubro es: ____. Objetivo: ____.`;
-      document.getElementById("btnPlanStart").href = wa(planMsg("START"));
-      document.getElementById("btnPlanPro").href = wa(planMsg("PRO"));
-      document.getElementById("btnPlanUltra").href = wa(planMsg("ULTRA"));
-      document.getElementById("btnPlanStart").target = "_blank";
-      document.getElementById("btnPlanPro").target = "_blank";
-      document.getElementById("btnPlanUltra").target = "_blank";
+      const planMsg = (plan) => `Hola CIBORG 347, quiero cotizar el ${plan} (pago único). Mi rubro es: ____. Objetivo: ____. ¿Me armás un plan accesible?`;
+      document.getElementById("btnPlanAccesible").href = wa(planMsg("Plan Accesible"));
+      document.getElementById("btnPlanCrecimiento").href = wa(planMsg("Plan Crecimiento"));
+      document.getElementById("btnPlanMarca").href = wa(planMsg("Plan Marca Pro"));
+      document.getElementById("btnPlanAccesible").target = "_blank";
+      document.getElementById("btnPlanCrecimiento").target = "_blank";
+      document.getElementById("btnPlanMarca").target = "_blank";
 
       renderChips();
       renderWorks();
