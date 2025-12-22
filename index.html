@@ -413,7 +413,6 @@
         0 18px 60px rgba(0,0,0,.25);
     }
 
-    /* Halo multicolor centrado (con mask para que se sienta "detrás del logo") */
     .hero-card .logo-big::before{
       content:"";
       position:absolute;
@@ -440,7 +439,6 @@
       mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 18%, rgba(0,0,0,0) 68%);
     }
 
-    /* Refuerzo radial suave */
     .hero-card .logo-big::after{
       content:"";
       position:absolute;
@@ -606,12 +604,11 @@
     }
     .work:hover{transform: translateY(-2px);}
 
-    /* FIX DEFINITIVO: el texto YA NO queda adentro de un overflow/clip con radius */
     .work-inner{
       border-radius: 20px;
       border: 1px solid var(--border1);
       background: rgba(255,255,255,.03);
-      overflow: visible;           /* clave */
+      overflow: visible;
       display:flex;
       flex-direction:column;
       min-height: 100%;
@@ -629,7 +626,7 @@
 
     .work .thumb{
       margin: 10px 10px 0;
-      border-radius: 16px;         /* clip SOLO para la imagen */
+      border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 4 / 3;
       background: rgba(0,0,0,.10);
@@ -649,7 +646,7 @@
     .work img{
       width:100%;
       height:100%;
-      object-fit: contain;         /* imagen completa */
+      object-fit: contain;
       display:block;
       border-radius: 0;
       background: transparent;
@@ -657,7 +654,7 @@
     }
 
     .work .meta{
-      padding: 14px 14px 16px;     /* más aire: nada toca la curvita */
+      padding: 14px 14px 16px;
     }
     .work .topline{
       display:flex; align-items:center; justify-content:space-between;
@@ -920,13 +917,18 @@
     .modal-card{
       width:min(1100px, 100%);
       height: min(92vh, 860px);
-      height: min(92svh, 860px); /* mejor en móviles con barra */
+      height: min(92svh, 860px);
       border-radius: 26px;
       border: 1px solid var(--border1);
       background: linear-gradient(180deg, var(--panel1), var(--panel2));
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
+
+      /* FIX: evita cortes por asumir altura fija del header */
+      display:flex;
+      flex-direction:column;
+      min-height: 0;
     }
     .modal-card .bar{
       display:flex; align-items:center; justify-content:space-between;
@@ -934,6 +936,7 @@
       padding: 12px 14px;
       border-bottom: 1px solid var(--border3);
       background: rgba(255,255,255,.03);
+      flex: 0 0 auto; /* FIX */
     }
     @media (prefers-color-scheme: light){
       .modal-card .bar{background: rgba(11,16,32,.03);}
@@ -953,14 +956,15 @@
       text-overflow: ellipsis;
       max-width: min(520px, 70vw);
     }
+
     .modal-card .content{
-      height: calc(100% - 52px);
+      /* FIX: ya no usamos calc(100% - 52px) */
+      flex: 1 1 auto;
+      min-height: 0;
       display:grid;
       grid-template-columns: 1.35fr .65fr;
-      min-height: 0;
     }
 
-    /* Preview */
     .modal-card .preview{
       background: rgba(255,255,255,.03);
       border-right: 1px solid var(--border3);
@@ -998,15 +1002,16 @@
       background: #000;
     }
 
-    /* Texto de ayuda (mejor legibilidad en PC) */
+    /* Texto de ayuda (mejor legibilidad en PC y sin cortes) */
     .demo-hint{
-      padding: 10px 14px 12px;
+      padding: 12px 14px 14px;
       color: var(--hintText);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.5;
       font-weight: 800;
       border-top: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
+      flex: 0 0 auto; /* FIX */
     }
     @media (prefers-color-scheme: light){
       .demo-hint{
@@ -1017,7 +1022,7 @@
     @media (min-width: 981px){
       .demo-hint{
         font-size: 13.8px;
-        line-height: 1.5;
+        line-height: 1.55;
       }
     }
 
@@ -1395,7 +1400,6 @@
           </div>
         </div>
 
-        <!-- UN SOLO BOTÓN CENTRADO -->
         <div class="plans-cta">
           <a class="btn primary" id="btnPlanQuote" href="#" rel="noopener">Pedir cotización</a>
         </div>
@@ -1509,7 +1513,6 @@
         <div class="footer-grid">
           <div>
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
-              <!-- LOGO FOOTER: MÁS GRANDE, SIN RECUADRO -->
               <img src="https://iili.io/fETkPEv.md.png" alt="CIBORG 347"
                    style="width:76px;height:76px;object-fit:contain;padding:0;background:transparent;border:none;border-radius:22px;box-shadow:none;
                           filter: drop-shadow(0 16px 30px rgba(0,0,0,.26)) drop-shadow(0 0 16px rgba(0,229,255,.14)) drop-shadow(0 0 18px rgba(255,60,255,.10));">
@@ -1537,7 +1540,6 @@
       </div>
     </footer>
 
-    <!-- WhatsApp flotante -->
     <div class="wa-float" aria-label="Botón flotante de WhatsApp">
       <div class="wa-pill">¿Hablamos por WhatsApp?</div>
       <a class="wa-btn" id="btnFloatWhatsApp" href="#" rel="noopener" aria-label="Abrir WhatsApp">
@@ -1548,7 +1550,6 @@
       </a>
     </div>
 
-    <!-- Modal con DEMO embebida -->
     <div class="modal" id="modal" aria-hidden="true">
       <div class="modal-card" role="dialog" aria-modal="true" aria-label="Detalle del trabajo">
         <div class="bar">
@@ -1571,7 +1572,7 @@
               </div>
             </div>
             <div class="demo-hint">
-              Si alguna demo no se muestra por restricciones del navegador, usá <b>“Abrir demo”</b>
+              Si alguna demo no se muestra por restricciones del navegador, usá <b>“Abrir demo”</b> para verla en otra pestaña.
             </div>
           </div>
 
@@ -1870,7 +1871,6 @@
         const name = document.getElementById("fName").value.trim();
         const biz = document.getElementById("fBiz").value.trim();
         const niche = document.getElementById("fNiche").value.trim();
-        const goal = document.getElementById("fGoal").value.trim(); // se usa para vos, no lo mando en el mensaje
         const msg = document.getElementById("fMsg").value.trim();
 
         const parts = [];
@@ -1890,9 +1890,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
