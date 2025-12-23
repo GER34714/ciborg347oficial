@@ -1052,12 +1052,26 @@
       .demo-frame{background: rgba(11,16,32,.06);}
     }
 
+    /* ===== CORRECCIÓN: MENOS "ZOOM" SOLO EN EL EMBEBIDO =====
+       Escala el contenido del iframe (0.8) y compensa tamaño (125%)
+    */
     .demo-frame iframe{
-      width: 100%;
-      height: 100%;
+      width: 125%;
+      height: 125%;
       border: 0;
       display:block;
       background: #000;
+      transform: scale(0.8);
+      transform-origin: top left;
+    }
+
+    /* Opcional recomendado: en móviles un poquito más chico aún */
+    @media (max-width: 640px){
+      .demo-frame iframe{
+        width: 134%;
+        height: 134%;
+        transform: scale(0.75);
+      }
     }
 
     .demo-hint{
@@ -1724,7 +1738,7 @@
         <!-- BOTONES ABAJO (MÁS ESPACIO PARA LA PREVIA) -->
         <div class="modal-actions" aria-label="Acciones">
           <button class="btn ghost" id="mCopyLink" type="button">Copiar link</button>
-          <a class="btn ghost" id="mWantSomething" href="#" rel="noopener">Quiero algo similar para mi</a>
+          <a class="btn ghost" id="mWantSomething" href="#" rel="noopener">Quiero algo así para mi emprendimiento/marca</a>
           <a class="btn primary" id="mOpenDemo" href="#" target="_blank" rel="noopener">Abrir demo</a>
         </div>
       </div>
@@ -1746,7 +1760,7 @@
     (function(){
       const WHATSAPP_PHONE = "5491164499481";
 
-      const defaultMsg = "Hola CIBORG 347, vi algunos de tus trabajos y quisiera pedir presupuesto para una web para mi emprendimiento/marca.";
+      const defaultMsg = "Hola CIBORG 347, vi algunos de tus trabajos y quisiera pedir presupuesto para una web para mi emprendimiento/marca. ¿Me contás cómo trabajás y me armás un plan accesible? (Pago único)";
       const wa = (text) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 
       const linkTop = document.getElementById("btnTopWhatsApp");
@@ -1763,7 +1777,7 @@
       });
 
       if(linkPlan){
-        linkPlan.href = wa("Hola CIBORG 347, quiero pedir cotización (para una web para mi emprendimiento/marca. ¿Me armás un plan accesible?");
+        linkPlan.href = wa("Hola CIBORG 347, quiero pedir cotización (pago único) para una web para mi emprendimiento/marca. Rubro: ____. ¿Me armás un plan accesible?");
         linkPlan.target = "_blank";
       }
 
@@ -1796,7 +1810,7 @@
 
         {category:"refacciones", img:"https://iili.io/farX3hl.jpg", link:"https://jyl-refacciones.onrender.com/", short:"Refacciones y construcciones para captar presupuestos.", info:"Landing para refacciones y construcciones, ideal para mostrar trabajos, servicios y captar presupuestos por WhatsApp."},
 
-        {category:"casino", img:"https://iili.io/KPygQXS.jpg", link:"https://facucasino.onrender.com/", short:"Diseño directo para captar jugadores.", info:"Estética intensa y conversiones rápidas."},
+        {category:"casino", img:"https://iili.io/KPygQXS.jpg", link:"https://facu-casino.onrender.com/", short:"Diseño directo para captar jugadores.", info:"Estética intensa y conversiones rápidas."},
         {category:"casino", img:"https://iili.io/KPyrMj2.jpg", link:"https://dragon-casino.onrender.com/", short:"Energía visual para atraer usuarios.", info:"Landing con estilo fuego y dinamismo."},
         {category:"casino", img:"https://iili.io/KPyDVHP.jpg", link:"https://dinasty-bet.onrender.com/", short:"Identidad deportiva sólida.", info:"Perfecta para apuestas y deportes."},
         {category:"casino", img:"https://iili.io/KigNdVS.jpg", link:"https://giraygana-fortunaplay.onrender.com/", short:"Diseño veloz y llamativo.", info:"Enfocada en interacción rápida."},
@@ -1823,8 +1837,8 @@
       const featuredOrder = [
         "https://adda-nails.onrender.com/",
         "https://radiocannafest.onrender.com",
-        "https://facucasino.onrender.com/",
-       "https://jyl-refacciones.onrender.com/"
+        "https://facu-casino.onrender.com/",
+        "https://jyl-refacciones.onrender.com/"
       ];
 
       const normalize = (s) => (s || "").toString().toLowerCase().trim();
